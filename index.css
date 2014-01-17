@@ -1,0 +1,37 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font: 1rem/1.6rem sans-serif;
+	display: flex;
+	background-color: #111;
+	color: #aaa;
+}
+
+span {
+	margin: auto;
+	font: 4rem/4rem sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	text-shadow: 2px 2px 2px rgba(128, 128, 128, 0.3);
+}
+
+.supported.torching {
+	color: #fff;
+}
+.supported.torching span {
+	text-shadow: 2px 2px 25px rgba(255, 255, 255, 1);
+}
+
+.unsupported.torching {
+	background-color: #fff;
+	color: #ddd;
+}
