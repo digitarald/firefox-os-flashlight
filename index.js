@@ -28,9 +28,15 @@
 		var count = cameras.length;
 		console.log('cameras: ' + count);
 		for (var i = 0; i < cameras.length; i++) {
-			navigator.mozCameras.getCamera({
+			var promise = navigator.mozCameras.getCamera({
 				camera: cameras[i]
 			}, found);
+			if (promise instanceof Promise) {
+				promise.then(function(result) {
+					console.log('promise', result);
+					found(result.camera);
+				});
+			}
 		}
 		if (!count) {
 			next('No camera');
