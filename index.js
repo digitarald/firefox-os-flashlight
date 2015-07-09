@@ -58,20 +58,20 @@
     }
   }
 
-  var torched = false;
+  var torching = false;
   var currentCamera = null;
 
   function trigger(to, release) {
-    torched = (to != null) ? to : (!torched);
+    torching = (to != null) ? to : (!torching);
 
-    if (torched) {
+    if (torching) {
       document.body.classList.add('torching');
     } else {
       document.body.classList.remove('torching');
     }
 
     if (currentCamera) {
-      currentCamera.flashMode = (torched) ? 'torch' : 'auto';
+      currentCamera.flashMode = (torching) ? 'torch' : 'auto';
       console.log('Set flashMode:', currentCamera.flashMode);
       return;
     }
@@ -86,7 +86,7 @@
       document.body.classList.add('supported');
       currentCamera = camera;
       console.log('Setting flashMode');
-      camera.flashMode = (torched) ? 'torch' : 'auto';
+      camera.flashMode = (torching) ? 'torch' : 'auto';
     });
   }
 
